@@ -1,0 +1,15 @@
+# Day15-11-22
+
+1、结构型模式中最体现扩展性的模式是 装饰模式
+
+2、在类方法中调用本类的类方法可直接调用。
+
+3、synchronized 可将语句块或方法设为同步使用。
+
+4、属于Java类加载过程的是：
+      生成java.lang.Class对象
+      执行static代码块
+      类方法解析
+
+5、Java中下面的能创建并启动线程的语句是
+   (new Thread(new MyRunnable()).start())
