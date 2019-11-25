@@ -1,0 +1,26 @@
+# Day15-11-22
+【题目解析】：实现两个数的相加求和，实现过程中不能用+运算符号
+【解题思路】：二进制加法特点。
+           位的异或运算跟求'和'的结果一致：
+             异或 1^1=0 1^0=1 0^0=0
+             求和 1+1=0 1+0=1 0+0=0
+           位的与运算跟求'进位'的结果一致：
+             位与 1&1=1 1&0=0 0&0=0
+             进位 1+1=1 1+0=0 0+0=0
+【代码示例】：             
+UnusualAddUnusualAddimport java.util.*;
+public class UnusualAdd {
+   public int addAB(int A, int B) {
+       if(B==0)
+         return A;
+       if(A==0)
+         return B;
+       int sum = A ^ B; //相加但不进位
+       int jin = (A & B) << 1; //进位但不相加
+      return addAB(sum, jin);//递归
+}
+  public static void main(String[] args) {
+    UnusualAdd day15_1=new UnusualAdd();
+    System.out.println(day15_1.addAB(3,2));
+}
+}
